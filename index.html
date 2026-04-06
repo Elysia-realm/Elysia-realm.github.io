@@ -41,10 +41,7 @@
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-primary">个人项目</a>
             <div class="hidden md:flex space-x-8">
-                <a href="#home" class="text-gray-700 hover:text-primary transition-all-300">首页</a>
-                <a href="#projects" class="text-gray-700 hover:text-primary transition-all-300">项目</a>
                 <a href="#game-demo" class="text-gray-700 hover:text-primary transition-all-300">Game Demo</a>
-                <a href="#about" class="text-gray-700 hover:text-primary transition-all-300">关于</a>
             </div>
             <div class="md:hidden">
                 <button id="menu-toggle" class="text-gray-700 focus:outline-none">
@@ -55,91 +52,16 @@
         <!-- 移动端菜单 -->
         <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
             <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
-                <a href="#home" class="text-gray-700 hover:text-primary py-2 transition-all-300">首页</a>
-                <a href="#projects" class="text-gray-700 hover:text-primary py-2 transition-all-300">项目</a>
                 <a href="#game-demo" class="text-gray-700 hover:text-primary py-2 transition-all-300">Game Demo</a>
-                <a href="#about" class="text-gray-700 hover:text-primary py-2 transition-all-300">关于</a>
             </div>
         </div>
     </nav>
 
-    <!-- 英雄区域 -->
-    <section id="home" class="pt-24 pb-16 bg-gradient-to-br from-blue-50 to-indigo-50">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 text-shadow">
-                        欢迎来到我的个人项目展示
-                    </h1>
-                    <p class="text-xl text-gray-600 mb-8">
-                        这里展示了我开发的各种项目，包括游戏、应用和工具。
-                        希望你能找到感兴趣的内容！
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#projects" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-all-300">
-                            浏览项目
-                        </a>
-                        <a href="#game-demo" class="border border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary hover:text-white transition-all-300">
-                            游戏演示
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20developer%20working%20on%20projects%20laptop%20code%20screen&image_size=landscape_16_9" alt="项目开发" class="rounded-lg w-full">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 项目展示 -->
-    <section id="projects" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">我的项目</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 项目卡片 1 -->
-                <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all-300">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=web%20application%20dashboard%20interface%20modern%20design&image_size=square" alt="项目1" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Web 应用仪表盘</h3>
-                        <p class="text-gray-600 mb-4">一个现代化的 Web 应用仪表盘，具有数据可视化和用户管理功能。</p>
-                        <a href="#" class="text-primary hover:underline">查看详情</a>
-                    </div>
-                </div>
-                <!-- 项目卡片 2 -->
-                <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all-300">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=mobile%20app%20ui%20design%20user%20friendly&image_size=square" alt="项目2" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">移动应用 UI 设计</h3>
-                        <p class="text-gray-600 mb-4">为一款社交应用设计的用户界面，注重用户体验和视觉美感。</p>
-                        <a href="#" class="text-primary hover:underline">查看详情</a>
-                    </div>
-                </div>
-                <!-- 项目卡片 3 -->
-                <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all-300">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=game%20development%203d%20environment%20unity&image_size=square" alt="项目3" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">3D 游戏开发</h3>
-                        <p class="text-gray-600 mb-4">使用 Unity 引擎开发的 3D 游戏，包含完整的游戏机制和视觉效果。</p>
-                        <a href="#" class="text-primary hover:underline">查看详情</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Game Demo 部分 -->
-    <section id="game-demo" class="py-16 bg-gray-50">
+    <section id="game-demo" class="pt-24 pb-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">Game Demo</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 gap-8">
                 <!-- 游戏视频 1 -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all-300">
                     <div class="aspect-w-16 aspect-h-9 bg-gray-200">
@@ -208,46 +130,6 @@
         </div>
     </section>
 
-    <!-- 关于部分 -->
-    <section id="about" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">关于我</h2>
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/3 mb-8 md:mb-0">
-                    <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-primary">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20developer%20portrait%20headshot%20friendly%20smile&image_size=square" alt="个人头像" class="w-full h-full object-cover">
-                    </div>
-                </div>
-                <div class="md:w-2/3 md:pl-12">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">开发者简介</h3>
-                    <p class="text-gray-600 mb-6">
-                        我是一名热爱编程和游戏开发的全栈工程师，拥有多年的项目开发经验。
-                        我擅长 Web 开发、移动应用开发和游戏开发，并且不断学习新技术和工具。
-                        我喜欢挑战复杂的问题，并且善于团队协作。
-                    </p>
-                    <p class="text-gray-600 mb-6">
-                        我的技术栈包括：HTML5、CSS3、JavaScript、React、Node.js、Unity 等。
-                        我相信技术的力量可以改变世界，并且致力于创造有价值的产品。
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-600 hover:text-primary transition-all-300">
-                            <i class="fa fa-github text-2xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-600 hover:text-primary transition-all-300">
-                            <i class="fa fa-linkedin text-2xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-600 hover:text-primary transition-all-300">
-                            <i class="fa fa-twitter text-2xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-600 hover:text-primary transition-all-300">
-                            <i class="fa fa-envelope text-2xl"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- 页脚 -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-4">
@@ -257,10 +139,7 @@
                     <p class="text-gray-400">© 2026 版权所有</p>
                 </div>
                 <div class="flex space-x-6">
-                    <a href="#home" class="text-gray-400 hover:text-white transition-all-300">首页</a>
-                    <a href="#projects" class="text-gray-400 hover:text-white transition-all-300">项目</a>
                     <a href="#game-demo" class="text-gray-400 hover:text-white transition-all-300">Game Demo</a>
-                    <a href="#about" class="text-gray-400 hover:text-white transition-all-300">关于</a>
                 </div>
             </div>
         </div>
