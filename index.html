@@ -101,7 +101,7 @@
                                 <div class="carousel-track flex h-full transition-transform duration-300" style="transform: translateX(0%);">
                                     <!-- 幻灯片 1：视频（换视频只改 src 这一行） -->
                                     <div class="carousel-slide w-full h-full shrink-0">
-                                        <video class="w-full h-full bg-black object-contain" controls preload="metadata">
+                                        <video class="w-full h-full bg-black object-contain" controls preload="none">
                                             <source src="video/SeriousJellyBattle/output.mp4" type="video/mp4">
                                             您的浏览器不支持 video 标签。
                                         </video>
@@ -145,7 +145,7 @@
                                 <div class="carousel-track flex h-full transition-transform duration-300" style="transform: translateX(0%);">
                                     <!-- 幻灯片 1：视频（换视频只改 src 这一行） -->
                                     <div class="carousel-slide w-full h-full shrink-0">
-                                        <video class="w-full h-full bg-black object-contain" controls preload="metadata">
+                                        <video class="w-full h-full bg-black object-contain" controls preload="none">
                                             <source src="video/RoadTrip/output.mp4" type="video/mp4">
                                             您的浏览器不支持 video 标签。
                                         </video>
@@ -231,7 +231,7 @@
                                 <div class="carousel-track flex h-full transition-transform duration-300" style="transform: translateX(0%);">
                                     <!-- 幻灯片 1：视频（换视频只改 src 这一行） -->
                                     <div class="carousel-slide w-full h-full shrink-0">
-                                        <video class="w-full h-full bg-black object-contain" controls preload="metadata">
+                                        <video class="w-full h-full bg-black object-contain" controls preload="none">
                                             <source src="video/Somnium/output.mp4" type="video/mp4">
                                             您的浏览器不支持 video 标签。
                                         </video>
@@ -332,6 +332,15 @@
         const tabButtons = document.querySelectorAll('.tab-btn');
         const tabPanels = document.querySelectorAll('.tab-panel');
 
+        // 视频按需加载：只加载当前 Tab 的视频，切换到新 Tab 时才加载对应视频的 metadata
+        function loadVideoInPanel(panel) {
+            const video = panel.querySelector('video');
+            if (video && video.preload === 'none') {
+                video.preload = 'metadata';
+                video.load();
+            }
+        }
+
         function switchTab(activeBtn) {
             const targetId = activeBtn.dataset.tab;
 
@@ -356,6 +365,11 @@
             document.querySelectorAll('.carousel').forEach(c => {
                 if (c._goTo) c._goTo(0);
             });
+
+            // 按需加载新 Tab 的视频（只拉 metadata，不下载视频数据）
+            tabPanels.forEach(panel => {
+                if (panel.id === targetId) loadVideoInPanel(panel);
+            });
         }
 
         tabButtons.forEach(btn => {
@@ -363,6 +377,9 @@
                 switchTab(this);
             });
         });
+
+        // 页面打开时：预加载当前显示的第一个 Tab 的视频 metadata
+        loadVideoInPanel(document.querySelector('.tab-panel.active'));
 
         // 媒体轮播：左右箭头 + 缩略图切换（视频 / 截图）
         document.querySelectorAll('.carousel').forEach(carousel => {
