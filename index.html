@@ -92,63 +92,200 @@
 
             <!-- Tab 面板 -->
             <div class="max-w-4xl mx-auto">
-                <!-- 面板 1：冒险游戏 -->
+                <!-- 面板 1：2026 · 严肃的果冻战争 -->
                 <div id="tab-1" class="tab-panel active" role="tabpanel" aria-labelledby="tab-btn-1">
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all-300">
-                        <div class="aspect-w-16 aspect-h-9 bg-gray-200">
-                            <!-- ★ 视频链接填写处：把下方 src 换成你的视频路径（如 video/你的文件夹/output.mp4）或完整网址即可 -->
-                            <video class="w-full h-full bg-black object-contain" controls preload="metadata">
-                                <source src="video/SeriousJellyBattle/output.mp4" type="video/mp4">
-                                您的浏览器不支持 video 标签。
-                            </video>
+                    <div class="bg-gray-900 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all-300">
+                        <!-- 媒体轮播区：视频 + 截图，左右箭头 / 缩略图切换 -->
+                        <div class="carousel">
+                            <div class="relative bg-black overflow-hidden" style="aspect-ratio:16/9;">
+                                <div class="carousel-track flex h-full transition-transform duration-300" style="transform: translateX(0%);">
+                                    <!-- 幻灯片 1：视频（换视频只改 src 这一行） -->
+                                    <div class="carousel-slide w-full h-full shrink-0">
+                                        <video class="w-full h-full bg-black object-contain" controls preload="metadata">
+                                            <source src="video/SeriousJellyBattle/output.mp4" type="video/mp4">
+                                            您的浏览器不支持 video 标签。
+                                        </video>
+                                    </div>
+                                    <!-- 幻灯片 2：截图占位。换真实图片：把这一整块 div 换成 <img src="你的图片地址" class="w-full h-full object-cover"> -->
+                                    <div class="carousel-slide w-full h-full shrink-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 flex flex-col items-center justify-center gap-3 text-gray-500">
+                                        <i class="fa fa-image text-6xl"></i>
+                                        <p class="text-sm">截图 1（占位）</p>
+                                    </div>
+                                    <!-- 幻灯片 3：截图占位 -->
+                                    <div class="carousel-slide w-full h-full shrink-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 flex flex-col items-center justify-center gap-3 text-gray-500">
+                                        <i class="fa fa-image text-6xl"></i>
+                                        <p class="text-sm">截图 2（占位）</p>
+                                    </div>
+                                    <!-- 幻灯片 4：截图占位 -->
+                                    <div class="carousel-slide w-full h-full shrink-0 bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900 flex flex-col items-center justify-center gap-3 text-gray-500">
+                                        <i class="fa fa-image text-6xl"></i>
+                                        <p class="text-sm">截图 3（占位）</p>
+                                    </div>
+                                </div>
+                                <!-- 左右切换箭头 -->
+                                <button class="carousel-prev absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white text-xl flex items-center justify-center transition-all-300" aria-label="上一个"><i class="fa fa-chevron-left"></i></button>
+                                <button class="carousel-next absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white text-xl flex items-center justify-center transition-all-300" aria-label="下一个"><i class="fa fa-chevron-right"></i></button>
+                            </div>
+                            <!-- 缩略图条 -->
+                            <div class="flex gap-2 px-4 py-3 bg-gray-800 overflow-x-auto">
+                                <button class="carousel-thumb active shrink-0 w-12 h-1 rounded-md overflow-hidden border-2 border-blue-500 bg-black flex items-center justify-center text-white hover:border-blue-400 transition-all-300" aria-label="视频"></button>
+                                <button class="carousel-thumb shrink-0 w-12 h-1 rounded-md overflow-hidden border-2 border-gray-600 bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center text-gray-400 hover:border-blue-400 transition-all-300" aria-label="截图 1"></button>
+                                <button class="carousel-thumb shrink-0 w-12 h-1 rounded-md overflow-hidden border-2 border-gray-600 bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center text-gray-400 hover:border-blue-400 transition-all-300" aria-label="截图 2"></button>
+                                <button class="carousel-thumb shrink-0 w-12 h-1 rounded-md overflow-hidden border-2 border-gray-600 bg-gradient-to-br from-gray-700 to-gray-500 flex items-center justify-center text-gray-400 hover:border-blue-400 transition-all-300" aria-label="截图 3"></button>
+                            </div>
                         </div>
+                        <!-- 游戏信息 -->
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">《严肃的果冻战争》</h3>
-                        </div>
-                    </div>
-                </div>
-                <!-- 面板 2：竞速游戏 -->
-                <div id="tab-2" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-2">
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all-300">
-                        <div class="aspect-w-16 aspect-h-9 bg-gray-200">
-                            <!-- ★ 视频链接填写处：把下方 src 换成你的视频路径（如 video/你的文件夹/output.mp4）或完整网址即可 -->
-                            <video class="w-full h-full bg-black object-contain" controls preload="metadata">
-                                <source src="video/RoadTrip/output.mp4" type="video/mp4">
-                                您的浏览器不支持 video 标签。
-                            </video>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">《星旅图鉴》</h3>
-                        </div>
-                    </div>
-                </div>
-                <!-- 面板 3：策略游戏 -->
-                <div id="tab-3" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-3">
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all-300">
-                        <div class="bg-black">
-                            <!-- ★ Bilibili 视频：B站视频不能直接填进 <video> 标签，必须用官方嵌入播放器 iframe。换视频时把 bvid= 后面的 BV 号换成新视频的即可 -->
-                            <iframe class="w-full" style="aspect-ratio:16/9;display:block;" src="https://player.bilibili.com/player.html?bvid=BV1EZw6eVEff&amp;page=1&amp;high_quality=1&amp;danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" loading="lazy"></iframe>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">《Dream Bubble》</h3>
-                            <div class="flex justify-between items-center">
-                                <a href="https://www.bilibili.com/video/BV1EZw6eVEff" target="_blank" rel="noopener" class="text-primary hover:underline">在 Bilibili 打开</a>
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-white">《严肃的果冻战争》</h3>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- 面板 4：Puzzle 游戏 -->
-                <div id="tab-4" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-4">
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all-300">
-                        <div class="aspect-w-16 aspect-h-9 bg-gray-200">
-                            <!-- ★ 视频链接填写处：把下方 src 换成你的视频路径（如 video/你的文件夹/output.mp4）或完整网址即可 -->
-                            <video class="w-full h-full bg-black object-contain" controls preload="metadata">
-                                <source src="video/Somnium/output.mp4" type="video/mp4">
-                                您的浏览器不支持 video 标签。
-                            </video>
+                <!-- 面板 2：2025-1 · 星旅图鉴 -->
+                <div id="tab-2" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-2">
+                    <div class="bg-gray-900 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all-300">
+                        <!-- 媒体轮播区：视频 + 截图，左右箭头 / 缩略图切换 -->
+                        <div class="carousel">
+                            <div class="relative bg-black overflow-hidden" style="aspect-ratio:16/9;">
+                                <div class="carousel-track flex h-full transition-transform duration-300" style="transform: translateX(0%);">
+                                    <!-- 幻灯片 1：视频（换视频只改 src 这一行） -->
+                                    <div class="carousel-slide w-full h-full shrink-0">
+                                        <video class="w-full h-full bg-black object-contain" controls preload="metadata">
+                                            <source src="video/RoadTrip/output.mp4" type="video/mp4">
+                                            您的浏览器不支持 video 标签。
+                                        </video>
+                                    </div>
+                                    <!-- 幻灯片 2：截图占位。换真实图片：把这一整块 div 换成 <img src="你的图片地址" class="w-full h-full object-cover"> -->
+                                    <div class="carousel-slide w-full h-full shrink-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 flex flex-col items-center justify-center gap-3 text-gray-500">
+                                        <i class="fa fa-image text-6xl"></i>
+                                        <p class="text-sm">截图 1（占位）</p>
+                                    </div>
+                                    <!-- 幻灯片 3：截图占位 -->
+                                    <div class="carousel-slide w-full h-full shrink-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 flex flex-col items-center justify-center gap-3 text-gray-500">
+                                        <i class="fa fa-image text-6xl"></i>
+                                        <p class="text-sm">截图 2（占位）</p>
+                                    </div>
+                                    <!-- 幻灯片 4：截图占位 -->
+                                    <div class="carousel-slide w-full h-full shrink-0 bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900 flex flex-col items-center justify-center gap-3 text-gray-500">
+                                        <i class="fa fa-image text-6xl"></i>
+                                        <p class="text-sm">截图 3（占位）</p>
+                                    </div>
+                                </div>
+                                <!-- 左右切换箭头 -->
+                                <button class="carousel-prev absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white text-xl flex items-center justify-center transition-all-300" aria-label="上一个"><i class="fa fa-chevron-left"></i></button>
+                                <button class="carousel-next absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white text-xl flex items-center justify-center transition-all-300" aria-label="下一个"><i class="fa fa-chevron-right"></i></button>
+                            </div>
+                            <!-- 缩略图条 -->
+                            <div class="flex gap-2 px-4 py-3 bg-gray-800 overflow-x-auto">
+                                <button class="carousel-thumb active shrink-0 w-12 h-1 rounded-md overflow-hidden border-2 border-blue-500 bg-black flex items-center justify-center text-white hover:border-blue-400 transition-all-300" aria-label="视频"></button>
+                                <button class="carousel-thumb shrink-0 w-12 h-1 rounded-md overflow-hidden border-2 border-gray-600 bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center text-gray-400 hover:border-blue-400 transition-all-300" aria-label="截图 1"></button>
+                                <button class="carousel-thumb shrink-0 w-12 h-1 rounded-md overflow-hidden border-2 border-gray-600 bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center text-gray-400 hover:border-blue-400 transition-all-300" aria-label="截图 2"></button>
+                                <button class="carousel-thumb shrink-0 w-12 h-1 rounded-md overflow-hidden border-2 border-gray-600 bg-gradient-to-br from-gray-700 to-gray-500 flex items-center justify-center text-gray-400 hover:border-blue-400 transition-all-300" aria-label="截图 3"></button>
+                            </div>
                         </div>
+                        <!-- 游戏信息 -->
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">《Somnium》</h3>
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-white">《星旅图鉴》</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 面板 3：2025-2 · Dream Bubble -->
+                <div id="tab-3" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-3">
+                    <div class="bg-gray-900 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all-300">
+                        <!-- 媒体轮播区：视频 + 截图，左右箭头 / 缩略图切换 -->
+                        <div class="carousel">
+                            <div class="relative bg-black overflow-hidden" style="aspect-ratio:16/9;">
+                                <div class="carousel-track flex h-full transition-transform duration-300" style="transform: translateX(0%);">
+                                    <!-- 幻灯片 1：Bilibili 视频（换视频只改 bvid= 后面的 BV 号） -->
+                                    <div class="carousel-slide w-full h-full shrink-0">
+                                        <iframe class="w-full h-full" src="https://player.bilibili.com/player.html?bvid=BV1EZw6eVEff&amp;page=1&amp;high_quality=1&amp;danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" loading="lazy"></iframe>
+                                    </div>
+                                    <!-- 幻灯片 2：截图占位。换真实图片：把这一整块 div 换成 <img src="你的图片地址" class="w-full h-full object-cover"> -->
+                                    <div class="carousel-slide w-full h-full shrink-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 flex flex-col items-center justify-center gap-3 text-gray-500">
+                                        <i class="fa fa-image text-6xl"></i>
+                                        <p class="text-sm">截图 1（占位）</p>
+                                    </div>
+                                    <!-- 幻灯片 3：截图占位 -->
+                                    <div class="carousel-slide w-full h-full shrink-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 flex flex-col items-center justify-center gap-3 text-gray-500">
+                                        <i class="fa fa-image text-6xl"></i>
+                                        <p class="text-sm">截图 2（占位）</p>
+                                    </div>
+                                    <!-- 幻灯片 4：截图占位 -->
+                                    <div class="carousel-slide w-full h-full shrink-0 bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900 flex flex-col items-center justify-center gap-3 text-gray-500">
+                                        <i class="fa fa-image text-6xl"></i>
+                                        <p class="text-sm">截图 3（占位）</p>
+                                    </div>
+                                </div>
+                                <!-- 左右切换箭头 -->
+                                <button class="carousel-prev absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white text-xl flex items-center justify-center transition-all-300" aria-label="上一个"><i class="fa fa-chevron-left"></i></button>
+                                <button class="carousel-next absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white text-xl flex items-center justify-center transition-all-300" aria-label="下一个"><i class="fa fa-chevron-right"></i></button>
+                            </div>
+                            <!-- 缩略图条 -->
+                            <div class="flex gap-2 px-4 py-3 bg-gray-800 overflow-x-auto">
+                                <button class="carousel-thumb active shrink-0 w-12 h-1 rounded-md overflow-hidden border-2 border-blue-500 bg-black flex items-center justify-center text-white hover:border-blue-400 transition-all-300" aria-label="视频"></button>
+                                <button class="carousel-thumb shrink-0 w-12 h-1 rounded-md overflow-hidden border-2 border-gray-600 bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center text-gray-400 hover:border-blue-400 transition-all-300" aria-label="截图 1"></button>
+                                <button class="carousel-thumb shrink-0 w-12 h-1 rounded-md overflow-hidden border-2 border-gray-600 bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center text-gray-400 hover:border-blue-400 transition-all-300" aria-label="截图 2"></button>
+                                <button class="carousel-thumb shrink-0 w-12 h-1 rounded-md overflow-hidden border-2 border-gray-600 bg-gradient-to-br from-gray-700 to-gray-500 flex items-center justify-center text-gray-400 hover:border-blue-400 transition-all-300" aria-label="截图 3"></button>
+                            </div>
+                        </div>
+                        <!-- 游戏信息 -->
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-white">《Dream Bubble》</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 面板 4：2023 · Somnium -->
+                <div id="tab-4" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-4">
+                    <div class="bg-gray-900 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all-300">
+                        <!-- 媒体轮播区：视频 + 截图，左右箭头 / 缩略图切换 -->
+                        <div class="carousel">
+                            <div class="relative bg-black overflow-hidden" style="aspect-ratio:16/9;">
+                                <div class="carousel-track flex h-full transition-transform duration-300" style="transform: translateX(0%);">
+                                    <!-- 幻灯片 1：视频（换视频只改 src 这一行） -->
+                                    <div class="carousel-slide w-full h-full shrink-0">
+                                        <video class="w-full h-full bg-black object-contain" controls preload="metadata">
+                                            <source src="video/Somnium/output.mp4" type="video/mp4">
+                                            您的浏览器不支持 video 标签。
+                                        </video>
+                                    </div>
+                                    <!-- 幻灯片 2：截图占位。换真实图片：把这一整块 div 换成 <img src="你的图片地址" class="w-full h-full object-cover"> -->
+                                    <div class="carousel-slide w-full h-full shrink-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 flex flex-col items-center justify-center gap-3 text-gray-500">
+                                        <i class="fa fa-image text-6xl"></i>
+                                        <p class="text-sm">截图 1（占位）</p>
+                                    </div>
+                                    <!-- 幻灯片 3：截图占位 -->
+                                    <div class="carousel-slide w-full h-full shrink-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 flex flex-col items-center justify-center gap-3 text-gray-500">
+                                        <i class="fa fa-image text-6xl"></i>
+                                        <p class="text-sm">截图 2（占位）</p>
+                                    </div>
+                                    <!-- 幻灯片 4：截图占位 -->
+                                    <div class="carousel-slide w-full h-full shrink-0 bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900 flex flex-col items-center justify-center gap-3 text-gray-500">
+                                        <i class="fa fa-image text-6xl"></i>
+                                        <p class="text-sm">截图 3（占位）</p>
+                                    </div>
+                                </div>
+                                <!-- 左右切换箭头 -->
+                                <button class="carousel-prev absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white text-xl flex items-center justify-center transition-all-300" aria-label="上一个"><i class="fa fa-chevron-left"></i></button>
+                                <button class="carousel-next absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white text-xl flex items-center justify-center transition-all-300" aria-label="下一个"><i class="fa fa-chevron-right"></i></button>
+                            </div>
+                            <!-- 缩略图条 -->
+                            <div class="flex gap-2 px-4 py-3 bg-gray-800 overflow-x-auto">
+                                <button class="carousel-thumb active shrink-0 w-12 h-1 rounded-md overflow-hidden border-2 border-blue-500 bg-black flex items-center justify-center text-white hover:border-blue-400 transition-all-300" aria-label="视频"></button>
+                                <button class="carousel-thumb shrink-0 w-12 h-1 rounded-md overflow-hidden border-2 border-gray-600 bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center text-gray-400 hover:border-blue-400 transition-all-300" aria-label="截图 1"></button>
+                                <button class="carousel-thumb shrink-0 w-12 h-1 rounded-md overflow-hidden border-2 border-gray-600 bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center text-gray-400 hover:border-blue-400 transition-all-300" aria-label="截图 2"></button>
+                                <button class="carousel-thumb shrink-0 w-12 h-1 rounded-md overflow-hidden border-2 border-gray-600 bg-gradient-to-br from-gray-700 to-gray-500 flex items-center justify-center text-gray-400 hover:border-blue-400 transition-all-300" aria-label="截图 3"></button>
+                            </div>
+                        </div>
+                        <!-- 游戏信息 -->
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-white">《Somnium》</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -218,6 +355,12 @@
             tabPanels.forEach(panel => {
                 panel.classList.toggle('active', panel.id === targetId);
             });
+
+            // 切换 Tab 时：所有轮播回到第一张、暂停所有视频
+            document.querySelectorAll('video').forEach(v => v.pause());
+            document.querySelectorAll('.carousel').forEach(c => {
+                if (c._goTo) c._goTo(0);
+            });
         }
 
         tabButtons.forEach(btn => {
@@ -226,13 +369,55 @@
             });
         });
 
-        // 视频播放功能：点击"观看视频"按钮，播放对应面板里的视频
+        // 媒体轮播：左右箭头 + 缩略图切换（视频 / 截图）
+        document.querySelectorAll('.carousel').forEach(carousel => {
+            const track = carousel.querySelector('.carousel-track');
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const thumbs = carousel.querySelectorAll('.carousel-thumb');
+            const prevBtn = carousel.querySelector('.carousel-prev');
+            const nextBtn = carousel.querySelector('.carousel-next');
+            const total = slides.length;
+            let index = 0;
+
+            function goTo(i) {
+                index = (i + total) % total;
+                track.style.transform = 'translateX(-' + (index * 100) + '%)';
+                thumbs.forEach((t, ti) => {
+                    t.classList.toggle('active', ti === index);
+                    t.classList.toggle('border-blue-500', ti === index);
+                    t.classList.toggle('border-gray-600', ti !== index);
+                });
+                // 切走时暂停对应的视频
+                slides.forEach((s, si) => {
+                    const v = s.querySelector('video');
+                    if (v && si !== index) v.pause();
+                });
+            }
+
+            carousel._goTo = goTo;
+
+            if (prevBtn) prevBtn.addEventListener('click', function() { goTo(index - 1); });
+            if (nextBtn) nextBtn.addEventListener('click', function() { goTo(index + 1); });
+            thumbs.forEach((t, ti) => t.addEventListener('click', function() { goTo(ti); }));
+        });
+
+        // 视频播放功能：点击"观看视频"，切到视频那张并播放
         document.querySelectorAll('.watch-btn').forEach(btn => {
             btn.addEventListener('click', function() {
-                const video = this.closest('.tab-panel').querySelector('video');
-                if (video) {
-                    video.play();
-                }
+                const panel = this.closest('.tab-panel');
+                const carousel = panel.querySelector('.carousel');
+                if (carousel && carousel._goTo) carousel._goTo(0);
+                const video = panel.querySelector('video');
+                if (video) video.play();
+            });
+        });
+
+        // 同一时间只播放一个视频
+        document.querySelectorAll('video').forEach(v => {
+            v.addEventListener('play', function() {
+                document.querySelectorAll('video').forEach(other => {
+                    if (other !== v) other.pause();
+                });
             });
         });
     </script>
