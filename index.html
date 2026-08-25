@@ -97,9 +97,11 @@
                 <div id="tab-1" class="tab-panel active" role="tabpanel" aria-labelledby="tab-btn-1">
                     <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all-300">
                         <div class="aspect-w-16 aspect-h-9 bg-gray-200">
-                            <div class="w-full h-full flex items-center justify-center bg-black">
-                                <i class="fa fa-play-circle text-white text-6xl cursor-pointer hover:text-primary transition-all-300"></i>
-                            </div>
+                            <!-- ★ 视频链接填写处：把下方 src 换成你的视频路径（如 video/你的文件夹/output.mp4）或完整网址即可 -->
+                            <video class="w-full h-full bg-black object-contain" controls preload="metadata">
+                                <source src="video/SeriousJellyBattle/output.mp4" type="video/mp4">
+                                您的浏览器不支持 video 标签。
+                            </video>
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-gray-800 mb-2">1</h3>
@@ -115,9 +117,11 @@
                 <div id="tab-2" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-2">
                     <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all-300">
                         <div class="aspect-w-16 aspect-h-9 bg-gray-200">
-                            <div class="w-full h-full flex items-center justify-center bg-black">
-                                <i class="fa fa-play-circle text-white text-6xl cursor-pointer hover:text-primary transition-all-300"></i>
-                            </div>
+                            <!-- ★ 视频链接填写处：把下方 src 换成你的视频路径（如 video/你的文件夹/output.mp4）或完整网址即可 -->
+                            <video class="w-full h-full bg-black object-contain" controls preload="metadata">
+                                <source src="video/RoadTrip/output.mp4" type="video/mp4">
+                                您的浏览器不支持 video 标签。
+                            </video>
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-gray-800 mb-2">2</h3>
@@ -133,9 +137,11 @@
                 <div id="tab-3" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-3">
                     <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all-300">
                         <div class="aspect-w-16 aspect-h-9 bg-gray-200">
-                            <div class="w-full h-full flex items-center justify-center bg-black">
-                                <i class="fa fa-play-circle text-white text-6xl cursor-pointer hover:text-primary transition-all-300"></i>
-                            </div>
+                            <!-- ★ 视频链接填写处：把下方 src 换成你的视频路径（如 video/你的文件夹/output.mp4）或完整网址即可（注意：Dream Bubble 文件夹还是空的，需要先放视频进去才能播放） -->
+                            <video class="w-full h-full bg-black object-contain" controls preload="metadata">
+                                <source src="video/Dream Bubble/output.mp4" type="video/mp4">
+                                您的浏览器不支持 video 标签。
+                            </video>
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-gray-800 mb-2">3</h3>
@@ -151,9 +157,11 @@
                 <div id="tab-4" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-4">
                     <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all-300">
                         <div class="aspect-w-16 aspect-h-9 bg-gray-200">
-                            <div class="w-full h-full flex items-center justify-center bg-black">
-                                <i class="fa fa-play-circle text-white text-6xl cursor-pointer hover:text-primary transition-all-300"></i>
-                            </div>
+                            <!-- ★ 视频链接填写处：把下方 src 换成你的视频路径（如 video/你的文件夹/output.mp4）或完整网址即可 -->
+                            <video class="w-full h-full bg-black object-contain" controls preload="metadata">
+                                <source src="video/Somnium/output.mp4" type="video/mp4">
+                                您的浏览器不支持 video 标签。
+                            </video>
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-gray-800 mb-2">4</h3>
@@ -239,11 +247,13 @@
             });
         });
 
-        // 视频播放功能
-        document.querySelectorAll('.fa-play-circle, .watch-btn').forEach(btn => {
+        // 视频播放功能：点击"观看视频"按钮，播放对应面板里的视频
+        document.querySelectorAll('.watch-btn').forEach(btn => {
             btn.addEventListener('click', function() {
-                // 这里可以添加视频播放逻辑
-                alert('视频播放功能将在上传实际视频后启用');
+                const video = this.closest('.tab-panel').querySelector('video');
+                if (video) {
+                    video.play();
+                }
             });
         });
     </script>
